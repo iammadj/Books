@@ -8,7 +8,7 @@
 import UIKit
 
 
-typealias MainScreenEntryPoint = MainScreenRouterProtocol & UIViewController
+typealias MainScreenEntryPoint = MainScreenViewProtocol & UIViewController
 
 
 protocol MainScreenRouterProtocol: BaseRouterProtocol {

@@ -21,6 +21,7 @@ class MainScreenViewController: UIViewController, MainScreenViewProtocol {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
     }
 
 }
