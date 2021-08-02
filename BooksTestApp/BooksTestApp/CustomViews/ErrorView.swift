@@ -47,10 +47,9 @@ class ErrorView: UIView {
         return label
     }()
     
-    private let closeButton: UIButton = {
+    private let actionButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Close", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.lightText, for: .highlighted)
         button.backgroundColor = .link
@@ -59,12 +58,12 @@ class ErrorView: UIView {
     
     private let closeButtonHeight: CGFloat = 40
     
-    var closeButtonDidClickHandler: EmptyCompletion?
+    var actionButtonDidClickHandler: EmptyCompletion?
         
     init() {
         super.init(frame: .zero)
         setupLC()
-        addTargetToCloseButton()
+        addTargetToActionButton()
     }
     
     required init?(coder: NSCoder) {
@@ -79,7 +78,7 @@ class ErrorView: UIView {
     
     private func setupLC() {
         addSubview(containerView)
-        containerView.addSubviews(errorLabel, errorDescriptionLabel, closeButton)
+        containerView.addSubviews(errorLabel, errorDescriptionLabel, actionButton)
         
         NSLayoutConstraint.activate([
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
@@ -97,17 +96,17 @@ class ErrorView: UIView {
             errorDescriptionLabel.topAnchor.constraint(greaterThanOrEqualTo: errorLabel.bottomAnchor, constant: 16),
             errorDescriptionLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
             
-            closeButton.topAnchor.constraint(greaterThanOrEqualTo: errorDescriptionLabel.bottomAnchor, constant: 32),
-            closeButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.6),
-            closeButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-            closeButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16)
+            actionButton.topAnchor.constraint(greaterThanOrEqualTo: errorDescriptionLabel.bottomAnchor, constant: 32),
+            actionButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.6),
+            actionButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            actionButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16)
         ])
         
-        closeButton.heightAnchor.constraint(equalToConstant: closeButtonHeight).isActive = true
+        actionButton.heightAnchor.constraint(equalToConstant: closeButtonHeight).isActive = true
     }
     
-    private func addTargetToCloseButton() {
-        closeButton.addTarget(self, action: #selector(closeButtonDidClick), for: .touchUpInside)
+    private func addTargetToActionButton() {
+        actionButton.addTarget(self, action: #selector(actionButtonDidClick), for: .touchUpInside)
     }
     
     private func setCornerRadiusToContainerView() {
@@ -115,11 +114,11 @@ class ErrorView: UIView {
     }
     
     private func setCornerRadiusToCloseButton() {
-        closeButton.layer.cornerRadius = closeButtonHeight / 2
+        actionButton.layer.cornerRadius = closeButtonHeight / 2
     }
     
-    @objc private func closeButtonDidClick() {
-        closeButtonDidClickHandler?()
+    @objc private func actionButtonDidClick() {
+        actionButtonDidClickHandler?()
     }
     
     //MARK: - Configure View Public Methods
@@ -127,6 +126,15 @@ class ErrorView: UIView {
     func configureWith(with model: ErrorViewModel) {
         errorLabel.text = model.title
         errorDescriptionLabel.text = model.description
+    }
+    
+    func setActionButtonTitle(_ title: String) {
+        actionButton.setTitle(title, for: .normal)
+    }
+    
+    func setActionButton(isEnabled: Bool) {
+        actionButton.isEnabled = isEnabled
+        actionButton.backgroundColor = isEnabled ? .link : .lightGray
     }
     
 }

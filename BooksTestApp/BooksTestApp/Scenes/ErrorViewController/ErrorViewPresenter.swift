@@ -29,11 +29,9 @@ class ErrorViewPresenter: ErrorViewPresenterProtocol {
     private var viewController: UIViewController? { view as? UIViewController }
     
     private let errorViewModel: ErrorViewModel
-    private let completionHandler: EmptyCompletion
     
-    init(errorViewModel: ErrorViewModel, completionHandler: @escaping EmptyCompletion) {
+    init(errorViewModel: ErrorViewModel) {
         self.errorViewModel = errorViewModel
-        self.completionHandler = completionHandler
     }
     
     func viewDidLoad() {
@@ -41,9 +39,7 @@ class ErrorViewPresenter: ErrorViewPresenterProtocol {
     }
     
     func dismiss() {
-        router?.dismiss(viewController: viewController, animated: true, completion: { [weak self] in
-            self?.completionHandler()
-        })
+        router?.dismiss(viewController: viewController, animated: true)
     }
 
 }

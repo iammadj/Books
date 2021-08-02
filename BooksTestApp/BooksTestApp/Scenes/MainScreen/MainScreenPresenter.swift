@@ -16,7 +16,8 @@ protocol MainScreenPresenterProtocol: AnyObject {
     
     // View to Presenter
     func viewDidLoad()
-    func getItems()
+    func getItems(with queryString: String)
+    func presentNetworkErrorView()
     
     // Interactor to Presenter
     func didFetchItems(with result: BookSearchResult)
@@ -33,38 +34,39 @@ class MainScreenPresenter: MainScreenPresenterProtocol {
     //MARK: - View to Presenter Methods
     
     func viewDidLoad() {
-        startFetchingItems()
+        setupView()
     }
     
-    func getItems() {
-        startFetchingItems()
+    func getItems(with queryString: String) {
+        setupView()
+        interactor?.getItems(with: queryString)
+    }
+    
+    func presentNetworkErrorView() {
+        router?.presentNetworkErrorView()
     }
     
     //MARK: - Interactor to Presenter Methods
     
     func didFetchItems(with result: BookSearchResult) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) { [weak self] in
-            switch result {
-            case .success(let books):
-                self?.view?.updateViewWith(items: books)
-                self?.view?.reload()
-                self?.hideIndicatorView()
-            case .failure(let error):
-                self?.view?.updateViewWithError()
-                self?.view?.reload()
-                self?.hideIndicatorView()
-                self?.presentErrorView(with: ErrorViewModel(title: "Ooops! Something went wrong", description: error.description))
-            }
+        switch result {
+        case .success(let books):
+            view?.updateViewWith(items: books)
+            view?.reload()
+            hideIndicatorView()
+        case .failure(let error):
+            view?.updateViewWithError()
+            view?.reload()
+            hideIndicatorView()
+            presentErrorView(with: ErrorViewModel(title: "Ooops! Something went wrong", description: error.localizedDescription))
         }
     }
     
     //MARK: - Private Methods
     
-    private func startFetchingItems() {
-        view?.setReloadButton(isHidden: true)
+    private func setupView() {
         view?.setAnimatingView(isHidden: false)
         view?.startAnimatingIndicatorView()
-        interactor?.getItems()
     }
     
     private func hideIndicatorView() {
@@ -73,9 +75,7 @@ class MainScreenPresenter: MainScreenPresenterProtocol {
     }
     
     private func presentErrorView(with errorViewModel: ErrorViewModel) {
-        router?.presentErrorView(with: errorViewModel, { [weak self] in
-            self?.view?.setReloadButton(isHidden: false)
-        })
+        router?.presentErrorView(with: errorViewModel)
     }
 
 }

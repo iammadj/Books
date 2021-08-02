@@ -24,6 +24,8 @@ class ErrorViewViewController: UIViewController, ErrorViewViewProtocol {
     private let errorView: ErrorView = {
         let errorView = ErrorView()
         errorView.translatesAutoresizingMaskIntoConstraints = false
+        errorView.setActionButtonTitle("Close")
+        errorView.setActionButton(isEnabled: true)
         return errorView
     }()
 
@@ -46,7 +48,7 @@ class ErrorViewViewController: UIViewController, ErrorViewViewProtocol {
     }
     
     private func errorViewCloseButtonDidClick() {
-        errorView.closeButtonDidClickHandler = { [weak self] in
+        errorView.actionButtonDidClickHandler = { [weak self] in
             self?.presenter?.dismiss()
         }
     }

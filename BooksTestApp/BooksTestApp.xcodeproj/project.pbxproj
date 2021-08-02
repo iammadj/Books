@@ -82,6 +82,20 @@
 		757C609926B79BE200F8B420 /* JSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C609726B79BE200F8B420 /* JSONMapper.swift */; };
 		757C609B26B79C1400F8B420 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C609A26B79C1400F8B420 /* APIResponse.swift */; };
 		757C609C26B79C1400F8B420 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C609A26B79C1400F8B420 /* APIResponse.swift */; };
+		757C609E26B7A4F200F8B420 /* NetworkReachabilityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C609D26B7A4F200F8B420 /* NetworkReachabilityHelper.swift */; };
+		757C609F26B7A4F200F8B420 /* NetworkReachabilityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C609D26B7A4F200F8B420 /* NetworkReachabilityHelper.swift */; };
+		757C60A826B7AC7900F8B420 /* NetworkErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C60A326B7AC7900F8B420 /* NetworkErrorPresenter.swift */; };
+		757C60A926B7AC7900F8B420 /* NetworkErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C60A326B7AC7900F8B420 /* NetworkErrorPresenter.swift */; };
+		757C60AA26B7AC7900F8B420 /* NetworkErrorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C60A426B7AC7900F8B420 /* NetworkErrorRouter.swift */; };
+		757C60AB26B7AC7900F8B420 /* NetworkErrorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C60A426B7AC7900F8B420 /* NetworkErrorRouter.swift */; };
+		757C60AC26B7AC7900F8B420 /* NetworkErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C60A526B7AC7900F8B420 /* NetworkErrorViewController.swift */; };
+		757C60AD26B7AC7900F8B420 /* NetworkErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C60A526B7AC7900F8B420 /* NetworkErrorViewController.swift */; };
+		757C60AE26B7AC7900F8B420 /* NetworkErrorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C60A626B7AC7900F8B420 /* NetworkErrorInteractor.swift */; };
+		757C60AF26B7AC7900F8B420 /* NetworkErrorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C60A626B7AC7900F8B420 /* NetworkErrorInteractor.swift */; };
+		757C60B026B7AC7900F8B420 /* NetworkErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C60A726B7AC7900F8B420 /* NetworkErrorEntity.swift */; };
+		757C60B126B7AC7900F8B420 /* NetworkErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C60A726B7AC7900F8B420 /* NetworkErrorEntity.swift */; };
+		757C60B426B7BCE000F8B420 /* UIImage+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C60B326B7BCE000F8B420 /* UIImage+extensions.swift */; };
+		757C60B526B7BCE000F8B420 /* UIImage+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C60B326B7BCE000F8B420 /* UIImage+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +161,13 @@
 		757C609426B79BB300F8B420 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		757C609726B79BE200F8B420 /* JSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMapper.swift; sourceTree = "<group>"; };
 		757C609A26B79C1400F8B420 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		757C609D26B7A4F200F8B420 /* NetworkReachabilityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityHelper.swift; sourceTree = "<group>"; };
+		757C60A326B7AC7900F8B420 /* NetworkErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorPresenter.swift; sourceTree = "<group>"; };
+		757C60A426B7AC7900F8B420 /* NetworkErrorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorRouter.swift; sourceTree = "<group>"; };
+		757C60A526B7AC7900F8B420 /* NetworkErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorViewController.swift; sourceTree = "<group>"; };
+		757C60A626B7AC7900F8B420 /* NetworkErrorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorInteractor.swift; sourceTree = "<group>"; };
+		757C60A726B7AC7900F8B420 /* NetworkErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorEntity.swift; sourceTree = "<group>"; };
+		757C60B326B7BCE000F8B420 /* UIImage+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +264,7 @@
 				757C601526B5570000F8B420 /* MainScreen */,
 				757C602C26B6979300F8B420 /* BookDetails */,
 				757C604E26B74D9500F8B420 /* ErrorViewController */,
+				757C60B226B7AC7E00F8B420 /* NetworkErrorView */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -259,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				757C604B26B7353D00F8B420 /* FetchError.swift */,
+				757C609D26B7A4F200F8B420 /* NetworkReachabilityHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -267,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				757C602926B56D8D00F8B420 /* UIView+extensions.swift */,
+				757C60B326B7BCE000F8B420 /* UIImage+extensions.swift */,
 				757C604426B69FB100F8B420 /* UIStackView+extension.swift */,
 			);
 			path = Extensions;
@@ -370,6 +394,18 @@
 				757C609A26B79C1400F8B420 /* APIResponse.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		757C60B226B7AC7E00F8B420 /* NetworkErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				757C60A326B7AC7900F8B420 /* NetworkErrorPresenter.swift */,
+				757C60A426B7AC7900F8B420 /* NetworkErrorRouter.swift */,
+				757C60A526B7AC7900F8B420 /* NetworkErrorViewController.swift */,
+				757C60A626B7AC7900F8B420 /* NetworkErrorInteractor.swift */,
+				757C60A726B7AC7900F8B420 /* NetworkErrorEntity.swift */,
+			);
+			path = NetworkErrorView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,6 +548,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				757C606D26B7757100F8B420 /* BookDetailsPresenter.swift in Sources */,
+				757C60AA26B7AC7900F8B420 /* NetworkErrorRouter.swift in Sources */,
 				757C608826B77CB700F8B420 /* Endpoint.swift in Sources */,
 				757C606026B752E600F8B420 /* Constants.swift in Sources */,
 				757C601F26B5572600F8B420 /* MainScreenViewController.swift in Sources */,
@@ -521,6 +558,7 @@
 				757C604526B69FB100F8B420 /* UIStackView+extension.swift in Sources */,
 				757C607526B7757100F8B420 /* BookDetailsEntity.swift in Sources */,
 				757C602326B5572600F8B420 /* MainScreenEntity.swift in Sources */,
+				757C60AE26B7AC7900F8B420 /* NetworkErrorInteractor.swift in Sources */,
 				757C602A26B56D8D00F8B420 /* UIView+extensions.swift in Sources */,
 				757C608526B77C7F00F8B420 /* BooksEndpoint.swift in Sources */,
 				757C606326B7622100F8B420 /* AppIndicatorView.swift in Sources */,
@@ -528,6 +566,8 @@
 				757C607126B7757100F8B420 /* BookDetailsViewController.swift in Sources */,
 				757C605426B74DC800F8B420 /* ErrorViewPresenter.swift in Sources */,
 				757C609526B79BB300F8B420 /* APIManager.swift in Sources */,
+				757C609E26B7A4F200F8B420 /* NetworkReachabilityHelper.swift in Sources */,
+				757C60B026B7AC7900F8B420 /* NetworkErrorEntity.swift in Sources */,
 				757C609126B79B3000F8B420 /* APIResponseProtocol.swift in Sources */,
 				757C607826B7772B00F8B420 /* BookSearchService.swift in Sources */,
 				757C605A26B74DC800F8B420 /* ErrorViewInteractor.swift in Sources */,
@@ -536,6 +576,8 @@
 				757C608B26B79A9400F8B420 /* APIManagerProtocol.swift in Sources */,
 				757C607326B7757100F8B420 /* BookDetailsInteractor.swift in Sources */,
 				757C5FE226B555FB00F8B420 /* AppDelegate.swift in Sources */,
+				757C60B426B7BCE000F8B420 /* UIImage+extensions.swift in Sources */,
+				757C60A826B7AC7900F8B420 /* NetworkErrorPresenter.swift in Sources */,
 				757C5FE426B555FB00F8B420 /* SceneDelegate.swift in Sources */,
 				757C601B26B5572600F8B420 /* MainScreenPresenter.swift in Sources */,
 				757C601D26B5572600F8B420 /* MainScreenRouter.swift in Sources */,
@@ -543,6 +585,7 @@
 				757C605826B74DC800F8B420 /* ErrorViewViewController.swift in Sources */,
 				757C604C26B7353D00F8B420 /* FetchError.swift in Sources */,
 				757C606F26B7757100F8B420 /* BookDetailsRouter.swift in Sources */,
+				757C60AC26B7AC7900F8B420 /* NetworkErrorViewController.swift in Sources */,
 				757C604226B69F6B00F8B420 /* MainScreenCollectionViewCell.swift in Sources */,
 				757C602126B5572600F8B420 /* MainScreenInteractor.swift in Sources */,
 				757C605626B74DC800F8B420 /* ErrorViewRouter.swift in Sources */,
@@ -568,18 +611,25 @@
 				757C605926B74DC800F8B420 /* ErrorViewViewController.swift in Sources */,
 				757C604A26B6CB2000F8B420 /* ErrorView.swift in Sources */,
 				757C608C26B79A9400F8B420 /* APIManagerProtocol.swift in Sources */,
+				757C60A926B7AC7900F8B420 /* NetworkErrorPresenter.swift in Sources */,
 				757C602826B5574F00F8B420 /* BaseRouterProtocol.swift in Sources */,
 				757C605D26B74DC800F8B420 /* ErrorViewEntity.swift in Sources */,
 				757C601E26B5572600F8B420 /* MainScreenRouter.swift in Sources */,
 				757C608926B77CB700F8B420 /* Endpoint.swift in Sources */,
 				757C602026B5572600F8B420 /* MainScreenViewController.swift in Sources */,
+				757C609F26B7A4F200F8B420 /* NetworkReachabilityHelper.swift in Sources */,
+				757C60AF26B7AC7900F8B420 /* NetworkErrorInteractor.swift in Sources */,
 				757C5FF926B555FD00F8B420 /* BooksTestAppTests.swift in Sources */,
 				757C603F26B698E900F8B420 /* SearchControllerFactory.swift in Sources */,
+				757C60B126B7AC7900F8B420 /* NetworkErrorEntity.swift in Sources */,
+				757C60AB26B7AC7900F8B420 /* NetworkErrorRouter.swift in Sources */,
 				757C606E26B7757100F8B420 /* BookDetailsPresenter.swift in Sources */,
 				757C605726B74DC800F8B420 /* ErrorViewRouter.swift in Sources */,
 				757C607426B7757100F8B420 /* BookDetailsInteractor.swift in Sources */,
 				757C601C26B5572600F8B420 /* MainScreenPresenter.swift in Sources */,
 				757C604626B69FB100F8B420 /* UIStackView+extension.swift in Sources */,
+				757C60AD26B7AC7900F8B420 /* NetworkErrorViewController.swift in Sources */,
+				757C60B526B7BCE000F8B420 /* UIImage+extensions.swift in Sources */,
 				757C604D26B7353D00F8B420 /* FetchError.swift in Sources */,
 				757C608626B77C7F00F8B420 /* BooksEndpoint.swift in Sources */,
 				757C608F26B79AF100F8B420 /* JSONMapperProtocol.swift in Sources */,

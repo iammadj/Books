@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 
 class MainScreenCollectionViewCell: UICollectionViewCell {
@@ -13,7 +14,7 @@ class MainScreenCollectionViewCell: UICollectionViewCell {
     static var id: String { String(describing: self) }
     
     private let containerStackView: UIStackView = {
-        let containerStackView = UIStackView(spacing: 8)
+        let containerStackView = UIStackView(spacing: 4)
         containerStackView.translatesAutoresizingMaskIntoConstraints = false
         return containerStackView
     }()
@@ -25,10 +26,17 @@ class MainScreenCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
+    private let bookAuthorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 14)
+        return label
+    }()
+    
     private let bookTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 20)
+        label.font = .systemFont(ofSize: 17)
         return label
     }()
     
@@ -47,7 +55,8 @@ class MainScreenCollectionViewCell: UICollectionViewCell {
     
     private func setupLC() {
         contentView.addSubview(containerStackView)
-        containerStackView.addArrangedSubivews(bookImageView, bookTitleLabel)
+        containerStackView.addArrangedSubivews(bookImageView, bookAuthorLabel, bookTitleLabel)
+        
         NSLayoutConstraint.activate([
             containerStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             containerStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
@@ -60,8 +69,9 @@ class MainScreenCollectionViewCell: UICollectionViewCell {
     
     func configure(with book: Book) {
         item = book
-        bookImageView.image = UIImage(named: book.imageName)
-        bookTitleLabel.text = book.title
+        bookImageView.kf.setImage(with: book.volumeInfo.imageLinks.thumbnail, placeholder: UIImage(named: "book3"), options: [.backgroundDecode])
+        bookAuthorLabel.text = book.volumeInfo.authors.joined(separator: String().capitalized)
+        bookTitleLabel.text = book.volumeInfo.title
     }
     
 }

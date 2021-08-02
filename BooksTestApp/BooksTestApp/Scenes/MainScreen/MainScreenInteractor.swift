@@ -12,7 +12,7 @@ protocol MainScreenInteractorProtocol: AnyObject {
 
     var presenter: MainScreenPresenterProtocol?  { get set }
     
-    func getItems()
+    func getItems(with queryString: String)
     
 }
 
@@ -21,19 +21,14 @@ class MainScreenInteractor: MainScreenInteractorProtocol {
 
     var presenter: MainScreenPresenterProtocol?
     
-    private let books: [Book] = [
-//        .init(imageName: "book1", title: "Charles Chaplin"),
-//        .init(imageName: "book2", title: "Darwin"),
-//        .init(imageName: "book3", title: "Robinson Cruso"),
-//        .init(imageName: "book4", title: "Marvel"),
-//        .init(imageName: "book5", title: "Cars"),
-//        .init(imageName: "book6", title: "About life"),
-//        .init(imageName: "book7", title: "Wild nature")
-    ]
+    let bookService: BookSearchServiceProtocol = BookSearchService()
     
-    func getItems() {
-        let result: BookSearchResult = books.isEmpty ? .failure(FetchError.failed): .success(books)
-        presenter?.didFetchItems(with: result)
+    func getItems(with queryString: String) {
+//        let result: BookSearchResult = books.isEmpty ? .failure(FetchError.failed): .success(books)
+//        presenter?.didFetchItems(with: result)
+        bookService.getBooks(with: queryString) { [weak self] res in
+            self?.presenter?.didFetchItems(with: res)
+        }
     }
     
 }

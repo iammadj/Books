@@ -27,10 +27,10 @@ extension APIResponseProtocol {
         }
     
         if let key = key {
-            return JSON(result)["result"][key].rawValue
+            return JSON(result)[key].rawValue
         }
         
-        return JSON(result)["result"].rawValue
+        return JSON(result).rawValue
     }
     
     func JSONBody() -> JSON? {

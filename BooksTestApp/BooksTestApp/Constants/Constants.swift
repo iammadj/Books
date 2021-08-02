@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Typealiases
 
 typealias EmptyCompletion = (() -> ())
-typealias BookSearchResult = Result<[Book], FetchError>
+typealias BookSearchResult = Result<[Book], Error>
 
 
 //MARK: - Constants

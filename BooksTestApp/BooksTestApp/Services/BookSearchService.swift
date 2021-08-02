@@ -12,7 +12,7 @@ import SwiftyJSON
 
 protocol BookSearchServiceProtocol {
     
-    func getBooks(with queryString: String, result: @escaping (Result<[Book], Error>) -> ())
+    func getBooks(with queryString: String, result: @escaping (BookSearchResult) -> ())
     
 }
 
@@ -27,7 +27,7 @@ class BookSearchService: BookSearchServiceProtocol {
         self.jsonMapper = jsonMapper
     }
     
-    func getBooks(with queryString: String, result: @escaping (Result<[Book], Error>) -> ()) {
+    func getBooks(with queryString: String, result: @escaping (BookSearchResult) -> ()) {
         apiManager.request(with: BooksEndpoint.getBooks(queryString)) { res in
             result(self.jsonMapper.mapToResult(from: res, for: "items", type: [Book].self))
         }

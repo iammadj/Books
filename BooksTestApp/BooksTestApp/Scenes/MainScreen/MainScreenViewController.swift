@@ -17,7 +17,6 @@ protocol MainScreenViewProtocol: AnyObject {
     func setAnimatingView(isHidden: Bool)
     func startAnimatingIndicatorView()
     func stopAnimatingIndicatorView()
-    func setReloadButton(isHidden: Bool)
     func reload()
     
 }
@@ -34,15 +33,6 @@ class MainScreenViewController: UIViewController, MainScreenViewProtocol {
         return indicatorView
     }()
     
-    private let reloadButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Reload", for: .normal)
-        button.setTitleColor(.link, for: .normal)
-        button.setTitleColor(.lightText, for: .highlighted)
-        return button
-    }()
-    
     private let collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,6 +44,7 @@ class MainScreenViewController: UIViewController, MainScreenViewProtocol {
     private var items: [Book] = []
     
     private var cellId: String { MainScreenCollectionViewCell.id }
+    private var isNetworkReachable: Bool { NetworkReachabilityHelper.isConnectedToInternet }
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +52,6 @@ class MainScreenViewController: UIViewController, MainScreenViewProtocol {
         setupView()
         setupCollectionView()
         setupCollectionViewLC()
-        setupReloadButton()
     }
     
     //MARK: - Private Methods
@@ -80,7 +70,7 @@ class MainScreenViewController: UIViewController, MainScreenViewProtocol {
     }
     
     private func setupCollectionViewLC() {
-        view.addSubviews(indicatorView, reloadButton, collectionView)
+        view.addSubviews(indicatorView, collectionView)
         
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -93,21 +83,6 @@ class MainScreenViewController: UIViewController, MainScreenViewProtocol {
             indicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             indicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-        
-        NSLayoutConstraint.activate([
-            reloadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            reloadButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            reloadButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
-            reloadButton.heightAnchor.constraint(equalToConstant: 32)
-        ])
-    }
-    
-    private func setupReloadButton() {
-        reloadButton.addTarget(self, action: #selector(reloadButtonDidClick), for: .touchUpInside)
-    }
-    
-    @objc private func reloadButtonDidClick() {
-        presenter?.getItems()
     }
     
     private func setCollectionView(isHidden: Bool) {
@@ -150,14 +125,6 @@ extension MainScreenViewController {
         indicatorView.stopAnimating()
     }
     
-    func setReloadButton(isHidden: Bool) {
-        DispatchQueue.main.async {
-            UIView.animate(withDuration: 0.6) { [weak self] in
-                self?.reloadButton.isHidden = isHidden
-            }
-        }
-    }
-    
     func reload() {
         collectionView.reloadData()
     }
@@ -167,7 +134,7 @@ extension MainScreenViewController {
 
 //MARK: - CollectionView DataSource & Delegate Methods
 
-extension MainScreenViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension MainScreenViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         items.count
@@ -181,14 +148,39 @@ extension MainScreenViewController: UICollectionViewDataSource, UICollectionView
         return UICollectionViewCell()
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let item = items[indexPath.row]
+        if let image = UIImage(named: item.volumeInfo.imageLinks.thumbnail.absoluteString) {
+            let titleLabel = UILabel()
+            let authorsLabel = UILabel()
+            titleLabel.text = item.volumeInfo.title
+            authorsLabel.text = item.volumeInfo.authors.joined(separator: String().capitalized)
+            var labelsSize = titleLabel.intrinsicContentSize
+            labelsSize.height += authorsLabel.intrinsicContentSize.height
+            labelsSize.width += authorsLabel.intrinsicContentSize.width
+            let imageHeight = image.size.height
+            let padding: CGFloat = 16
+            var height: CGFloat { imageHeight + labelsSize.height + padding }
+            return .init(width: collectionView.frame.width / image.getCropRatio(), height: height)
+        }
+        let padding: CGFloat = 16
+        let width = collectionView.frame.width / 2 - padding
+        return .init(width: width, height: width)
+    }
+    
 }
 
 //MARK: - UISearchControllerDelegate & UISearchResultsUpdating Methods
 
-extension MainScreenViewController: UISearchControllerDelegate, UISearchResultsUpdating {
+extension MainScreenViewController: UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
         print(searchController.searchBar.text ?? "")
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let query = searchBar.text ?? ""
+        presenter?.getItems(with: query)
     }
     
 }

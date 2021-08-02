@@ -15,7 +15,7 @@ protocol ErrorViewRouterProtocol: BaseRouterProtocol {
     
     var viewController: ErrorViewEntryPoint? { get set }
     
-    static func createModule(with errorViewModel: ErrorViewModel, completionHandler: @escaping EmptyCompletion) -> UIViewController?
+    static func createModule(with errorViewModel: ErrorViewModel) -> UIViewController?
 
 }
 
@@ -24,10 +24,10 @@ class ErrorViewRouter: ErrorViewRouterProtocol {
     
     weak var viewController: ErrorViewEntryPoint?
     
-    static func createModule(with errorViewModel: ErrorViewModel, completionHandler: @escaping EmptyCompletion) -> UIViewController? {
+    static func createModule(with errorViewModel: ErrorViewModel) -> UIViewController? {
         let view: ErrorViewViewProtocol = ErrorViewViewController()
         let interactor: ErrorViewInteractorProtocol = ErrorViewInteractor()
-        let presenter: ErrorViewPresenterProtocol = ErrorViewPresenter(errorViewModel: errorViewModel, completionHandler: completionHandler)
+        let presenter: ErrorViewPresenterProtocol = ErrorViewPresenter(errorViewModel: errorViewModel)
         let router: ErrorViewRouterProtocol = ErrorViewRouter()
         
         view.presenter = presenter

@@ -10,7 +10,7 @@ import UIKit
 
 class SearchControllerFactory {
     
-    static func create(with delegate: (UISearchResultsUpdating & UISearchControllerDelegate),
+    static func create(with delegate: (UISearchResultsUpdating & UISearchControllerDelegate & UISearchBarDelegate),
                        placeholder: String) -> UISearchController {
         let searchController: UISearchController =  {
             let searchController = UISearchController(searchResultsController: nil)
@@ -19,6 +19,7 @@ class SearchControllerFactory {
             searchController.hidesNavigationBarDuringPresentation = false
             searchController.obscuresBackgroundDuringPresentation = false
 //            searchController.dimsBackgroundDuringPresentation = false
+            searchController.searchBar.delegate = delegate
             searchController.searchBar.searchBarStyle = .minimal
             searchController.searchBar.isTranslucent = false
 //            searchController.searchBar.backgroundColor = .background // if the app will have dark mode, here we can set correct bg color
