@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -61,6 +61,27 @@
 		757C607426B7757100F8B420 /* BookDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C606B26B7757100F8B420 /* BookDetailsInteractor.swift */; };
 		757C607526B7757100F8B420 /* BookDetailsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C606C26B7757100F8B420 /* BookDetailsEntity.swift */; };
 		757C607626B7757100F8B420 /* BookDetailsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C606C26B7757100F8B420 /* BookDetailsEntity.swift */; };
+		757C607826B7772B00F8B420 /* BookSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C607726B7772B00F8B420 /* BookSearchService.swift */; };
+		757C607926B7772B00F8B420 /* BookSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C607726B7772B00F8B420 /* BookSearchService.swift */; };
+		757C607C26B77B5700F8B420 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 757C607B26B77B5700F8B420 /* Alamofire */; };
+		757C607F26B77BBC00F8B420 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 757C607E26B77BBC00F8B420 /* SwiftyJSON */; };
+		757C608226B77BD400F8B420 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 757C608126B77BD400F8B420 /* Kingfisher */; };
+		757C608526B77C7F00F8B420 /* BooksEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C608426B77C7F00F8B420 /* BooksEndpoint.swift */; };
+		757C608626B77C7F00F8B420 /* BooksEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C608426B77C7F00F8B420 /* BooksEndpoint.swift */; };
+		757C608826B77CB700F8B420 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C608726B77CB700F8B420 /* Endpoint.swift */; };
+		757C608926B77CB700F8B420 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C608726B77CB700F8B420 /* Endpoint.swift */; };
+		757C608B26B79A9400F8B420 /* APIManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C608A26B79A9400F8B420 /* APIManagerProtocol.swift */; };
+		757C608C26B79A9400F8B420 /* APIManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C608A26B79A9400F8B420 /* APIManagerProtocol.swift */; };
+		757C608E26B79AF100F8B420 /* JSONMapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C608D26B79AF100F8B420 /* JSONMapperProtocol.swift */; };
+		757C608F26B79AF100F8B420 /* JSONMapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C608D26B79AF100F8B420 /* JSONMapperProtocol.swift */; };
+		757C609126B79B3000F8B420 /* APIResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C609026B79B3000F8B420 /* APIResponseProtocol.swift */; };
+		757C609226B79B3000F8B420 /* APIResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C609026B79B3000F8B420 /* APIResponseProtocol.swift */; };
+		757C609526B79BB300F8B420 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C609426B79BB300F8B420 /* APIManager.swift */; };
+		757C609626B79BB300F8B420 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C609426B79BB300F8B420 /* APIManager.swift */; };
+		757C609826B79BE200F8B420 /* JSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C609726B79BE200F8B420 /* JSONMapper.swift */; };
+		757C609926B79BE200F8B420 /* JSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C609726B79BE200F8B420 /* JSONMapper.swift */; };
+		757C609B26B79C1400F8B420 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C609A26B79C1400F8B420 /* APIResponse.swift */; };
+		757C609C26B79C1400F8B420 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C609A26B79C1400F8B420 /* APIResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +138,15 @@
 		757C606A26B7757100F8B420 /* BookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
 		757C606B26B7757100F8B420 /* BookDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsInteractor.swift; sourceTree = "<group>"; };
 		757C606C26B7757100F8B420 /* BookDetailsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsEntity.swift; sourceTree = "<group>"; };
+		757C607726B7772B00F8B420 /* BookSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchService.swift; sourceTree = "<group>"; };
+		757C608426B77C7F00F8B420 /* BooksEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksEndpoint.swift; sourceTree = "<group>"; };
+		757C608726B77CB700F8B420 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		757C608A26B79A9400F8B420 /* APIManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerProtocol.swift; sourceTree = "<group>"; };
+		757C608D26B79AF100F8B420 /* JSONMapperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMapperProtocol.swift; sourceTree = "<group>"; };
+		757C609026B79B3000F8B420 /* APIResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseProtocol.swift; sourceTree = "<group>"; };
+		757C609426B79BB300F8B420 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		757C609726B79BE200F8B420 /* JSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMapper.swift; sourceTree = "<group>"; };
+		757C609A26B79C1400F8B420 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +154,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				757C608226B77BD400F8B420 /* Kingfisher in Frameworks */,
+				757C607F26B77BBC00F8B420 /* SwiftyJSON in Frameworks */,
+				757C607C26B77B5700F8B420 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +202,8 @@
 			children = (
 				757C5FE126B555FB00F8B420 /* AppDelegate.swift */,
 				757C5FE326B555FB00F8B420 /* SceneDelegate.swift */,
+				757C609326B79B8C00F8B420 /* Managers */,
+				757C608326B77C6A00F8B420 /* Endpoint */,
 				757C605E26B752D900F8B420 /* Constants */,
 				757C604726B6CB0E00F8B420 /* CustomViews */,
 				757C603C26B698D400F8B420 /* Factories */,
@@ -215,6 +250,7 @@
 		757C601226B556B300F8B420 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				757C607726B7772B00F8B420 /* BookSearchService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -253,6 +289,10 @@
 			isa = PBXGroup;
 			children = (
 				757C602626B5574F00F8B420 /* BaseRouterProtocol.swift */,
+				757C608726B77CB700F8B420 /* Endpoint.swift */,
+				757C609026B79B3000F8B420 /* APIResponseProtocol.swift */,
+				757C608A26B79A9400F8B420 /* APIManagerProtocol.swift */,
+				757C608D26B79AF100F8B420 /* JSONMapperProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -314,6 +354,24 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		757C608326B77C6A00F8B420 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				757C608426B77C7F00F8B420 /* BooksEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		757C609326B79B8C00F8B420 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				757C609426B79BB300F8B420 /* APIManager.swift */,
+				757C609726B79BE200F8B420 /* JSONMapper.swift */,
+				757C609A26B79C1400F8B420 /* APIResponse.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -330,6 +388,11 @@
 			dependencies = (
 			);
 			name = BooksTestApp;
+			packageProductDependencies = (
+				757C607B26B77B5700F8B420 /* Alamofire */,
+				757C607E26B77BBC00F8B420 /* SwiftyJSON */,
+				757C608126B77BD400F8B420 /* Kingfisher */,
+			);
 			productName = BooksTestApp;
 			productReference = 757C5FDE26B555FB00F8B420 /* BooksTestApp.app */;
 			productType = "com.apple.product-type.application";
@@ -401,6 +464,11 @@
 				Base,
 			);
 			mainGroup = 757C5FD526B555FB00F8B420;
+			packageReferences = (
+				757C607A26B77B5600F8B420 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				757C607D26B77BBC00F8B420 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				757C608026B77BD400F8B420 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 757C5FDF26B555FB00F8B420 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -444,25 +512,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				757C606D26B7757100F8B420 /* BookDetailsPresenter.swift in Sources */,
+				757C608826B77CB700F8B420 /* Endpoint.swift in Sources */,
 				757C606026B752E600F8B420 /* Constants.swift in Sources */,
 				757C601F26B5572600F8B420 /* MainScreenViewController.swift in Sources */,
 				757C605C26B74DC800F8B420 /* ErrorViewEntity.swift in Sources */,
 				757C602726B5574F00F8B420 /* BaseRouterProtocol.swift in Sources */,
+				757C609826B79BE200F8B420 /* JSONMapper.swift in Sources */,
 				757C604526B69FB100F8B420 /* UIStackView+extension.swift in Sources */,
 				757C607526B7757100F8B420 /* BookDetailsEntity.swift in Sources */,
 				757C602326B5572600F8B420 /* MainScreenEntity.swift in Sources */,
 				757C602A26B56D8D00F8B420 /* UIView+extensions.swift in Sources */,
+				757C608526B77C7F00F8B420 /* BooksEndpoint.swift in Sources */,
 				757C606326B7622100F8B420 /* AppIndicatorView.swift in Sources */,
 				757C604926B6CB2000F8B420 /* ErrorView.swift in Sources */,
 				757C607126B7757100F8B420 /* BookDetailsViewController.swift in Sources */,
 				757C605426B74DC800F8B420 /* ErrorViewPresenter.swift in Sources */,
+				757C609526B79BB300F8B420 /* APIManager.swift in Sources */,
+				757C609126B79B3000F8B420 /* APIResponseProtocol.swift in Sources */,
+				757C607826B7772B00F8B420 /* BookSearchService.swift in Sources */,
 				757C605A26B74DC800F8B420 /* ErrorViewInteractor.swift in Sources */,
 				757C603E26B698E900F8B420 /* SearchControllerFactory.swift in Sources */,
+				757C608E26B79AF100F8B420 /* JSONMapperProtocol.swift in Sources */,
+				757C608B26B79A9400F8B420 /* APIManagerProtocol.swift in Sources */,
 				757C607326B7757100F8B420 /* BookDetailsInteractor.swift in Sources */,
 				757C5FE226B555FB00F8B420 /* AppDelegate.swift in Sources */,
 				757C5FE426B555FB00F8B420 /* SceneDelegate.swift in Sources */,
 				757C601B26B5572600F8B420 /* MainScreenPresenter.swift in Sources */,
 				757C601D26B5572600F8B420 /* MainScreenRouter.swift in Sources */,
+				757C609B26B79C1400F8B420 /* APIResponse.swift in Sources */,
 				757C605826B74DC800F8B420 /* ErrorViewViewController.swift in Sources */,
 				757C604C26B7353D00F8B420 /* FetchError.swift in Sources */,
 				757C606F26B7757100F8B420 /* BookDetailsRouter.swift in Sources */,
@@ -476,19 +553,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				757C609626B79BB300F8B420 /* APIManager.swift in Sources */,
 				757C607026B7757100F8B420 /* BookDetailsRouter.swift in Sources */,
 				757C605B26B74DC800F8B420 /* ErrorViewInteractor.swift in Sources */,
 				757C605526B74DC800F8B420 /* ErrorViewPresenter.swift in Sources */,
 				757C604326B69F6B00F8B420 /* MainScreenCollectionViewCell.swift in Sources */,
+				757C609C26B79C1400F8B420 /* APIResponse.swift in Sources */,
+				757C607926B7772B00F8B420 /* BookSearchService.swift in Sources */,
 				757C602B26B56D8D00F8B420 /* UIView+extensions.swift in Sources */,
 				757C602226B5572600F8B420 /* MainScreenInteractor.swift in Sources */,
 				757C602426B5572600F8B420 /* MainScreenEntity.swift in Sources */,
 				757C607226B7757100F8B420 /* BookDetailsViewController.swift in Sources */,
+				757C609926B79BE200F8B420 /* JSONMapper.swift in Sources */,
 				757C605926B74DC800F8B420 /* ErrorViewViewController.swift in Sources */,
 				757C604A26B6CB2000F8B420 /* ErrorView.swift in Sources */,
+				757C608C26B79A9400F8B420 /* APIManagerProtocol.swift in Sources */,
 				757C602826B5574F00F8B420 /* BaseRouterProtocol.swift in Sources */,
 				757C605D26B74DC800F8B420 /* ErrorViewEntity.swift in Sources */,
 				757C601E26B5572600F8B420 /* MainScreenRouter.swift in Sources */,
+				757C608926B77CB700F8B420 /* Endpoint.swift in Sources */,
 				757C602026B5572600F8B420 /* MainScreenViewController.swift in Sources */,
 				757C5FF926B555FD00F8B420 /* BooksTestAppTests.swift in Sources */,
 				757C603F26B698E900F8B420 /* SearchControllerFactory.swift in Sources */,
@@ -498,7 +581,10 @@
 				757C601C26B5572600F8B420 /* MainScreenPresenter.swift in Sources */,
 				757C604626B69FB100F8B420 /* UIStackView+extension.swift in Sources */,
 				757C604D26B7353D00F8B420 /* FetchError.swift in Sources */,
+				757C608626B77C7F00F8B420 /* BooksEndpoint.swift in Sources */,
+				757C608F26B79AF100F8B420 /* JSONMapperProtocol.swift in Sources */,
 				757C607626B7757100F8B420 /* BookDetailsEntity.swift in Sources */,
+				757C609226B79B3000F8B420 /* APIResponseProtocol.swift in Sources */,
 				757C606126B752E600F8B420 /* Constants.swift in Sources */,
 				757C606426B7622100F8B420 /* AppIndicatorView.swift in Sources */,
 			);
@@ -811,6 +897,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		757C607A26B77B5600F8B420 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+		757C607D26B77BBC00F8B420 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		757C608026B77BD400F8B420 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		757C607B26B77B5700F8B420 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 757C607A26B77B5600F8B420 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		757C607E26B77BBC00F8B420 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 757C607D26B77BBC00F8B420 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		757C608126B77BD400F8B420 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 757C608026B77BD400F8B420 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 757C5FD626B555FB00F8B420 /* Project object */;
 }

@@ -32,7 +32,7 @@ class MainScreenInteractor: MainScreenInteractorProtocol {
     ]
     
     func getItems() {
-        let result: BookResulType = books.isEmpty ? .failure(FetchError.failed): .success(books)
+        let result: BookSearchResult = books.isEmpty ? .failure(FetchError.failed): .success(books)
         presenter?.didFetchItems(with: result)
     }
     

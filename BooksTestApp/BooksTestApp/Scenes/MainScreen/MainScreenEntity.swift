@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Book {
+struct Book: Codable {
     
     let imageName: String
     let title: String

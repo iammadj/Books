@@ -10,12 +10,13 @@ import Foundation
 // MARK: - Typealiases
 
 typealias EmptyCompletion = (() -> ())
+typealias BookSearchResult = Result<[Book], FetchError>
 
 
 //MARK: - Constants
 
 class Constants {
     
-    static let baseUrl = ""
+    static let baseUrl = "https://www.googleapis.com/books/v1/volumes?q="
     
 }

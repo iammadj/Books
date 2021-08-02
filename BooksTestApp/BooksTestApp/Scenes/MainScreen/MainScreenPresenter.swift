@@ -8,9 +8,6 @@
 import UIKit
 
 
-typealias BookResulType = Result<[Book], FetchError>
-
-
 protocol MainScreenPresenterProtocol: AnyObject {
     
     var view: MainScreenViewProtocol? { get set }
@@ -22,7 +19,7 @@ protocol MainScreenPresenterProtocol: AnyObject {
     func getItems()
     
     // Interactor to Presenter
-    func didFetchItems(with result: BookResulType)
+    func didFetchItems(with result: BookSearchResult)
 
 }
 
@@ -45,7 +42,7 @@ class MainScreenPresenter: MainScreenPresenterProtocol {
     
     //MARK: - Interactor to Presenter Methods
     
-    func didFetchItems(with result: BookResulType) {
+    func didFetchItems(with result: BookSearchResult) {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) { [weak self] in
             switch result {
             case .success(let books):
