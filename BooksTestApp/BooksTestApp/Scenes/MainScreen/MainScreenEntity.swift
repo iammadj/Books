@@ -8,8 +8,9 @@
 import Foundation
 
 
-struct MainScreen {
+struct Book {
     
-    
+    let imageName: String
+    let title: String
 
 }

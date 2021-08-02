@@ -8,9 +8,6 @@
 import UIKit
 
 
-typealias EmptyCompletion = (() -> Void)
-
-
 protocol BaseRouterProtocol: AnyObject {
     
     func dismiss(viewController: UIViewController?, animated: Bool, completion: EmptyCompletion?)

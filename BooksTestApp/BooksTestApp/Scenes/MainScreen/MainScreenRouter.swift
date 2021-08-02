@@ -16,6 +16,8 @@ protocol MainScreenRouterProtocol: BaseRouterProtocol {
     var viewController: MainScreenEntryPoint? { get set }
     
     static func createModule() -> UIViewController?
+    
+    func presentErrorView(with errorViewModel: ErrorViewModel, _ completionHandler: @escaping EmptyCompletion)
 
 }
 
@@ -27,13 +29,27 @@ class MainScreenRouter: MainScreenRouterProtocol {
     static func createModule() -> UIViewController? {
         let view: MainScreenViewProtocol = MainScreenViewController()
         let interactor: MainScreenInteractorProtocol = MainScreenInteractor()
+        let presenter: MainScreenPresenterProtocol = MainScreenPresenter()
         let router: MainScreenRouterProtocol = MainScreenRouter()
-        let presenter: MainScreenPresenterProtocol = MainScreenPresenter(view: view, interactor: interactor, router: router)
         
         view.presenter = presenter
+        
         interactor.presenter = presenter
+        
+        presenter.router = router
+        presenter.view = view
+        presenter.interactor = interactor
+        
         router.viewController = view as? MainScreenEntryPoint
         
         return view as? MainScreenEntryPoint
     }
+    
+    func presentErrorView(with errorViewModel: ErrorViewModel, _ completionHandler: @escaping EmptyCompletion) {
+        guard let errorViewController = ErrorViewRouter.createModule(with: errorViewModel, completionHandler: completionHandler) else { return }
+        errorViewController.modalTransitionStyle = .crossDissolve
+        errorViewController.modalPresentationStyle = .overCurrentContext
+        self.viewController?.present(errorViewController, animated: true, completion: nil)
+    }
+    
 }
