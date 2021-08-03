@@ -24,10 +24,8 @@ class MainScreenInteractor: MainScreenInteractorProtocol {
     let bookService: BookSearchServiceProtocol = BookSearchService()
     
     func getItems(with queryString: String) {
-//        let result: BookSearchResult = books.isEmpty ? .failure(FetchError.failed): .success(books)
-//        presenter?.didFetchItems(with: result)
-        bookService.getBooks(with: queryString) { [weak self] res in
-            self?.presenter?.didFetchItems(with: res)
+        bookService.getBooks(with: queryString) { [weak self] result in
+            self?.presenter?.didFetchItems(with: result)
         }
     }
     

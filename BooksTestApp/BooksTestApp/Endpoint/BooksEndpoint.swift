@@ -16,7 +16,8 @@ enum BooksEndpoint: Endpoint {
     var url: String {
         switch self {
         case .getBooks(let queryString):
-            return String(format: "%@%@", baseUrl, queryString)
+            let query = queryString.lowercased().replacingOccurrences(of: " ", with: "+")
+            return String(format: "%@%@", baseUrl, query)
         }
     }
     

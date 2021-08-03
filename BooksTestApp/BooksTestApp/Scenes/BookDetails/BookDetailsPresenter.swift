@@ -13,6 +13,8 @@ protocol BookDetailsPresenterProtocol: AnyObject {
     var view: BookDetailsViewProtocol? { get set }
     var interactor: BookDetailsInteractorProtocol? { get set }
     var router: BookDetailsRouterProtocol? { get set }
+    
+    // Interactor to Presenter
 
 }
 

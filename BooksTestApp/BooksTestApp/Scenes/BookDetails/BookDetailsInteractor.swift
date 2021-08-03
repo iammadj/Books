@@ -12,11 +12,17 @@ protocol BookDetailsInteractorProtocol: AnyObject {
 
     var presenter: BookDetailsPresenterProtocol?  { get set }
     
+    func getBookImage(with url: URL?)
+    
 }
 
 
 class BookDetailsInteractor: BookDetailsInteractorProtocol {
 
     var presenter: BookDetailsPresenterProtocol?
+    
+    func getBookImage(with url: URL?) {
+        
+    }
     
 }

@@ -22,8 +22,7 @@ class AppIndicatorView: UIView {
         let indicatorView = UIActivityIndicatorView()
         indicatorView.translatesAutoresizingMaskIntoConstraints = false
         indicatorView.style = .medium
-        indicatorView.color = .link
-        indicatorView.tintColor = .red
+        indicatorView.color = .gray
         return indicatorView
     }()
     
@@ -40,6 +39,7 @@ class AppIndicatorView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        backgroundColor = .clear
         setCornerRadiusToContainerView()
     }
     
@@ -68,13 +68,23 @@ class AppIndicatorView: UIView {
         containerView.layer.cornerRadius = 16
     }
     
+    private func setContainerView(isHidden: Bool) {
+        DispatchQueue.main.async { [weak self] in
+            UIView.animate(withDuration: 0.6) {
+                self?.containerView.isHidden = isHidden
+            }
+        }
+    }
+    
     //MARK: - Public IndicatorView Setting Methods
     
     func startAnimating() {
+        setContainerView(isHidden: false)
         indicatorView.startAnimating()
     }
     
     func stopAnimating() {
+        setContainerView(isHidden: true)
         indicatorView.stopAnimating()
     }
     

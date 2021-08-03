@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         let navigationController = UINavigationController(rootViewController: rootViewController)
         window.rootViewController = navigationController
+        ImageCacheManager.shared.setupCache()
         self.window = window
         window.makeKeyAndVisible()
     }

@@ -15,9 +15,9 @@ protocol MainScreenPresenterProtocol: AnyObject {
     var router: MainScreenRouterProtocol? { get set }
     
     // View to Presenter
-    func viewDidLoad()
     func getItems(with queryString: String)
     func presentNetworkErrorView()
+    func didSelect(item: Book)
     
     // Interactor to Presenter
     func didFetchItems(with result: BookSearchResult)
@@ -33,17 +33,17 @@ class MainScreenPresenter: MainScreenPresenterProtocol {
     
     //MARK: - View to Presenter Methods
     
-    func viewDidLoad() {
-        setupView()
-    }
-    
     func getItems(with queryString: String) {
-        setupView()
+        view?.startAnimatingIndicatorView()
         interactor?.getItems(with: queryString)
     }
     
     func presentNetworkErrorView() {
         router?.presentNetworkErrorView()
+    }
+    
+    func didSelect(item: Book) {
+        
     }
     
     //MARK: - Interactor to Presenter Methods
@@ -53,26 +53,16 @@ class MainScreenPresenter: MainScreenPresenterProtocol {
         case .success(let books):
             view?.updateViewWith(items: books)
             view?.reload()
-            hideIndicatorView()
+            view?.stopAnimatingIndicatorView()
         case .failure(let error):
             view?.updateViewWithError()
             view?.reload()
-            hideIndicatorView()
+            view?.stopAnimatingIndicatorView()
             presentErrorView(with: ErrorViewModel(title: "Ooops! Something went wrong", description: error.localizedDescription))
         }
     }
     
     //MARK: - Private Methods
-    
-    private func setupView() {
-        view?.setAnimatingView(isHidden: false)
-        view?.startAnimatingIndicatorView()
-    }
-    
-    private func hideIndicatorView() {
-        view?.stopAnimatingIndicatorView()
-        view?.setAnimatingView(isHidden: true)
-    }
     
     private func presentErrorView(with errorViewModel: ErrorViewModel) {
         router?.presentErrorView(with: errorViewModel)

@@ -10,6 +10,13 @@ import Alamofire
 import SwiftyJSON
 
 
+protocol APIManagerProtocol {
+    
+    func request(with endpoint: Endpoint, result: @escaping (AFResult<APIResponseProtocol>) -> ())
+    
+}
+
+
 class APIManager: APIManagerProtocol {
     
     func request(with endpoint: Endpoint, result: @escaping (AFResult<APIResponseProtocol>) -> ()) {

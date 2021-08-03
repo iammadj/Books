@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7509688926B92EDA00BABC78 /* UICollectionView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7509688826B92EDA00BABC78 /* UICollectionView+extensions.swift */; };
 		757C5FE226B555FB00F8B420 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5FE126B555FB00F8B420 /* AppDelegate.swift */; };
 		757C5FE426B555FB00F8B420 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5FE326B555FB00F8B420 /* SceneDelegate.swift */; };
 		757C5FEB26B555FD00F8B420 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757C5FEA26B555FD00F8B420 /* Assets.xcassets */; };
@@ -17,8 +18,8 @@
 		757C601C26B5572600F8B420 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C601626B5572600F8B420 /* MainScreenPresenter.swift */; };
 		757C601D26B5572600F8B420 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C601726B5572600F8B420 /* MainScreenRouter.swift */; };
 		757C601E26B5572600F8B420 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C601726B5572600F8B420 /* MainScreenRouter.swift */; };
-		757C601F26B5572600F8B420 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C601826B5572600F8B420 /* MainScreenViewController.swift */; };
-		757C602026B5572600F8B420 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C601826B5572600F8B420 /* MainScreenViewController.swift */; };
+		757C601F26B5572600F8B420 /* MainScreenCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C601826B5572600F8B420 /* MainScreenCollectionViewController.swift */; };
+		757C602026B5572600F8B420 /* MainScreenCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C601826B5572600F8B420 /* MainScreenCollectionViewController.swift */; };
 		757C602126B5572600F8B420 /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C601926B5572600F8B420 /* MainScreenInteractor.swift */; };
 		757C602226B5572600F8B420 /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C601926B5572600F8B420 /* MainScreenInteractor.swift */; };
 		757C602326B5572600F8B420 /* MainScreenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C601A26B5572600F8B420 /* MainScreenEntity.swift */; };
@@ -70,10 +71,6 @@
 		757C608626B77C7F00F8B420 /* BooksEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C608426B77C7F00F8B420 /* BooksEndpoint.swift */; };
 		757C608826B77CB700F8B420 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C608726B77CB700F8B420 /* Endpoint.swift */; };
 		757C608926B77CB700F8B420 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C608726B77CB700F8B420 /* Endpoint.swift */; };
-		757C608B26B79A9400F8B420 /* APIManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C608A26B79A9400F8B420 /* APIManagerProtocol.swift */; };
-		757C608C26B79A9400F8B420 /* APIManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C608A26B79A9400F8B420 /* APIManagerProtocol.swift */; };
-		757C608E26B79AF100F8B420 /* JSONMapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C608D26B79AF100F8B420 /* JSONMapperProtocol.swift */; };
-		757C608F26B79AF100F8B420 /* JSONMapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C608D26B79AF100F8B420 /* JSONMapperProtocol.swift */; };
 		757C609126B79B3000F8B420 /* APIResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C609026B79B3000F8B420 /* APIResponseProtocol.swift */; };
 		757C609226B79B3000F8B420 /* APIResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C609026B79B3000F8B420 /* APIResponseProtocol.swift */; };
 		757C609526B79BB300F8B420 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C609426B79BB300F8B420 /* APIManager.swift */; };
@@ -96,6 +93,9 @@
 		757C60B126B7AC7900F8B420 /* NetworkErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C60A726B7AC7900F8B420 /* NetworkErrorEntity.swift */; };
 		757C60B426B7BCE000F8B420 /* UIImage+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C60B326B7BCE000F8B420 /* UIImage+extensions.swift */; };
 		757C60B526B7BCE000F8B420 /* UIImage+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C60B326B7BCE000F8B420 /* UIImage+extensions.swift */; };
+		75A191B226B9AD58001A8810 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A191B126B9AD58001A8810 /* TestViewController.swift */; };
+		75A191B426B9D4C1001A8810 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A191B326B9D4C1001A8810 /* ImageCacheManager.swift */; };
+		75A191B526B9D4C1001A8810 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A191B326B9D4C1001A8810 /* ImageCacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +116,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7509688826B92EDA00BABC78 /* UICollectionView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+extensions.swift"; sourceTree = "<group>"; };
 		757C5FDE26B555FB00F8B420 /* BooksTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BooksTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		757C5FE126B555FB00F8B420 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		757C5FE326B555FB00F8B420 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,7 +131,7 @@
 		757C600526B555FD00F8B420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		757C601626B5572600F8B420 /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
 		757C601726B5572600F8B420 /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
-		757C601826B5572600F8B420 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		757C601826B5572600F8B420 /* MainScreenCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCollectionViewController.swift; sourceTree = "<group>"; };
 		757C601926B5572600F8B420 /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
 		757C601A26B5572600F8B420 /* MainScreenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenEntity.swift; sourceTree = "<group>"; };
 		757C602626B5574F00F8B420 /* BaseRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouterProtocol.swift; sourceTree = "<group>"; };
@@ -155,8 +156,6 @@
 		757C607726B7772B00F8B420 /* BookSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchService.swift; sourceTree = "<group>"; };
 		757C608426B77C7F00F8B420 /* BooksEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksEndpoint.swift; sourceTree = "<group>"; };
 		757C608726B77CB700F8B420 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		757C608A26B79A9400F8B420 /* APIManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerProtocol.swift; sourceTree = "<group>"; };
-		757C608D26B79AF100F8B420 /* JSONMapperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMapperProtocol.swift; sourceTree = "<group>"; };
 		757C609026B79B3000F8B420 /* APIResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseProtocol.swift; sourceTree = "<group>"; };
 		757C609426B79BB300F8B420 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		757C609726B79BE200F8B420 /* JSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMapper.swift; sourceTree = "<group>"; };
@@ -168,6 +167,8 @@
 		757C60A626B7AC7900F8B420 /* NetworkErrorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorInteractor.swift; sourceTree = "<group>"; };
 		757C60A726B7AC7900F8B420 /* NetworkErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorEntity.swift; sourceTree = "<group>"; };
 		757C60B326B7BCE000F8B420 /* UIImage+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extensions.swift"; sourceTree = "<group>"; };
+		75A191B126B9AD58001A8810 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		75A191B326B9D4C1001A8810 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +262,7 @@
 		757C601126B556A400F8B420 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				75A191B126B9AD58001A8810 /* TestViewController.swift */,
 				757C601526B5570000F8B420 /* MainScreen */,
 				757C602C26B6979300F8B420 /* BookDetails */,
 				757C604E26B74D9500F8B420 /* ErrorViewController */,
@@ -292,6 +294,7 @@
 				757C602926B56D8D00F8B420 /* UIView+extensions.swift */,
 				757C60B326B7BCE000F8B420 /* UIImage+extensions.swift */,
 				757C604426B69FB100F8B420 /* UIStackView+extension.swift */,
+				7509688826B92EDA00BABC78 /* UICollectionView+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -301,7 +304,7 @@
 			children = (
 				757C601626B5572600F8B420 /* MainScreenPresenter.swift */,
 				757C601726B5572600F8B420 /* MainScreenRouter.swift */,
-				757C601826B5572600F8B420 /* MainScreenViewController.swift */,
+				757C601826B5572600F8B420 /* MainScreenCollectionViewController.swift */,
 				757C601926B5572600F8B420 /* MainScreenInteractor.swift */,
 				757C601A26B5572600F8B420 /* MainScreenEntity.swift */,
 				757C604026B69F4A00F8B420 /* Cells */,
@@ -315,8 +318,6 @@
 				757C602626B5574F00F8B420 /* BaseRouterProtocol.swift */,
 				757C608726B77CB700F8B420 /* Endpoint.swift */,
 				757C609026B79B3000F8B420 /* APIResponseProtocol.swift */,
-				757C608A26B79A9400F8B420 /* APIManagerProtocol.swift */,
-				757C608D26B79AF100F8B420 /* JSONMapperProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -392,6 +393,7 @@
 				757C609426B79BB300F8B420 /* APIManager.swift */,
 				757C609726B79BE200F8B420 /* JSONMapper.swift */,
 				757C609A26B79C1400F8B420 /* APIResponse.swift */,
+				75A191B326B9D4C1001A8810 /* ImageCacheManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -551,7 +553,8 @@
 				757C60AA26B7AC7900F8B420 /* NetworkErrorRouter.swift in Sources */,
 				757C608826B77CB700F8B420 /* Endpoint.swift in Sources */,
 				757C606026B752E600F8B420 /* Constants.swift in Sources */,
-				757C601F26B5572600F8B420 /* MainScreenViewController.swift in Sources */,
+				7509688926B92EDA00BABC78 /* UICollectionView+extensions.swift in Sources */,
+				757C601F26B5572600F8B420 /* MainScreenCollectionViewController.swift in Sources */,
 				757C605C26B74DC800F8B420 /* ErrorViewEntity.swift in Sources */,
 				757C602726B5574F00F8B420 /* BaseRouterProtocol.swift in Sources */,
 				757C609826B79BE200F8B420 /* JSONMapper.swift in Sources */,
@@ -572,10 +575,9 @@
 				757C607826B7772B00F8B420 /* BookSearchService.swift in Sources */,
 				757C605A26B74DC800F8B420 /* ErrorViewInteractor.swift in Sources */,
 				757C603E26B698E900F8B420 /* SearchControllerFactory.swift in Sources */,
-				757C608E26B79AF100F8B420 /* JSONMapperProtocol.swift in Sources */,
-				757C608B26B79A9400F8B420 /* APIManagerProtocol.swift in Sources */,
 				757C607326B7757100F8B420 /* BookDetailsInteractor.swift in Sources */,
 				757C5FE226B555FB00F8B420 /* AppDelegate.swift in Sources */,
+				75A191B226B9AD58001A8810 /* TestViewController.swift in Sources */,
 				757C60B426B7BCE000F8B420 /* UIImage+extensions.swift in Sources */,
 				757C60A826B7AC7900F8B420 /* NetworkErrorPresenter.swift in Sources */,
 				757C5FE426B555FB00F8B420 /* SceneDelegate.swift in Sources */,
@@ -587,6 +589,7 @@
 				757C606F26B7757100F8B420 /* BookDetailsRouter.swift in Sources */,
 				757C60AC26B7AC7900F8B420 /* NetworkErrorViewController.swift in Sources */,
 				757C604226B69F6B00F8B420 /* MainScreenCollectionViewCell.swift in Sources */,
+				75A191B426B9D4C1001A8810 /* ImageCacheManager.swift in Sources */,
 				757C602126B5572600F8B420 /* MainScreenInteractor.swift in Sources */,
 				757C605626B74DC800F8B420 /* ErrorViewRouter.swift in Sources */,
 			);
@@ -608,15 +611,15 @@
 				757C602426B5572600F8B420 /* MainScreenEntity.swift in Sources */,
 				757C607226B7757100F8B420 /* BookDetailsViewController.swift in Sources */,
 				757C609926B79BE200F8B420 /* JSONMapper.swift in Sources */,
+				75A191B526B9D4C1001A8810 /* ImageCacheManager.swift in Sources */,
 				757C605926B74DC800F8B420 /* ErrorViewViewController.swift in Sources */,
 				757C604A26B6CB2000F8B420 /* ErrorView.swift in Sources */,
-				757C608C26B79A9400F8B420 /* APIManagerProtocol.swift in Sources */,
 				757C60A926B7AC7900F8B420 /* NetworkErrorPresenter.swift in Sources */,
 				757C602826B5574F00F8B420 /* BaseRouterProtocol.swift in Sources */,
 				757C605D26B74DC800F8B420 /* ErrorViewEntity.swift in Sources */,
 				757C601E26B5572600F8B420 /* MainScreenRouter.swift in Sources */,
 				757C608926B77CB700F8B420 /* Endpoint.swift in Sources */,
-				757C602026B5572600F8B420 /* MainScreenViewController.swift in Sources */,
+				757C602026B5572600F8B420 /* MainScreenCollectionViewController.swift in Sources */,
 				757C609F26B7A4F200F8B420 /* NetworkReachabilityHelper.swift in Sources */,
 				757C60AF26B7AC7900F8B420 /* NetworkErrorInteractor.swift in Sources */,
 				757C5FF926B555FD00F8B420 /* BooksTestAppTests.swift in Sources */,
@@ -632,7 +635,6 @@
 				757C60B526B7BCE000F8B420 /* UIImage+extensions.swift in Sources */,
 				757C604D26B7353D00F8B420 /* FetchError.swift in Sources */,
 				757C608626B77C7F00F8B420 /* BooksEndpoint.swift in Sources */,
-				757C608F26B79AF100F8B420 /* JSONMapperProtocol.swift in Sources */,
 				757C607626B7757100F8B420 /* BookDetailsEntity.swift in Sources */,
 				757C609226B79B3000F8B420 /* APIResponseProtocol.swift in Sources */,
 				757C606126B752E600F8B420 /* Constants.swift in Sources */,
@@ -797,6 +799,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BooksTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -815,6 +818,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BooksTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

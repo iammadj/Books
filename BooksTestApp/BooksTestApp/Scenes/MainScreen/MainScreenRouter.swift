@@ -28,7 +28,7 @@ class MainScreenRouter: MainScreenRouterProtocol {
     weak var viewController: MainScreenEntryPoint?
     
     static func createModule() -> UIViewController? {
-        let view: MainScreenViewProtocol = MainScreenViewController()
+        let view: MainScreenViewProtocol = MainScreenCollectionViewController()
         let interactor: MainScreenInteractorProtocol = MainScreenInteractor()
         let presenter: MainScreenPresenterProtocol = MainScreenPresenter()
         let router: MainScreenRouterProtocol = MainScreenRouter()
