@@ -75,7 +75,7 @@ class NetworkErrorViewController: UIViewController, NetworkErrorViewProtocol {
 extension NetworkErrorViewController {
     
     func set(errorViewModel: ErrorViewModel) {
-        errorView.configureWith(with: errorViewModel)
+        errorView.configure(with: errorViewModel)
     }
     
 }

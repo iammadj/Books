@@ -34,7 +34,9 @@ class BookSearchService: BookSearchServiceProtocol {
             switch response {
             case .success(let items):
                 let urls = items.compactMap { $0.thumbnailUrl }
-                ImageCacheManager.shared.cacheImages(with: urls) { hasError in
+                let smallUrls = items.compactMap { $0.smallThumbnailUrl }
+                let flattenUrls = [urls, smallUrls].flatMap { $0 }
+                ImageCacheManager.shared.cacheImages(with: flattenUrls) { hasError in
                     if !hasError {
                         result(.success(items))
                     }

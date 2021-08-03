@@ -43,7 +43,7 @@ class MainScreenPresenter: MainScreenPresenterProtocol {
     }
     
     func didSelect(item: Book) {
-        
+        router?.pushToBookDetailsView(with: item)
     }
     
     //MARK: - Interactor to Presenter Methods
@@ -58,7 +58,7 @@ class MainScreenPresenter: MainScreenPresenterProtocol {
             view?.updateViewWithError()
             view?.reload()
             view?.stopAnimatingIndicatorView()
-            presentErrorView(with: ErrorViewModel(title: "Ooops! Something went wrong", description: error.localizedDescription))
+            presentErrorView(with: .init(title: "Ooops! Something went wrong", description: error.localizedDescription))
         }
     }
     

@@ -60,7 +60,7 @@ class ErrorViewViewController: UIViewController, ErrorViewViewProtocol {
 extension ErrorViewViewController {
     
     func set(errorViewModel: ErrorViewModel) {
-        errorView.configureWith(with: errorViewModel)
+        errorView.configure(with: errorViewModel)
     }
     
 }

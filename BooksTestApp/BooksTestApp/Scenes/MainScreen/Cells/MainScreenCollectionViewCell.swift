@@ -78,6 +78,7 @@ class MainScreenCollectionViewCell: UICollectionViewCell {
         bookAuthorLabel.text = item.authors
         
         setupLC()
+        setNeedsLayout()
     }
     
     private func setupLC() {
@@ -96,49 +97,6 @@ class MainScreenCollectionViewCell: UICollectionViewCell {
             stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
             stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16)
         ])
-        
-        setNeedsLayout()
-    }
-    
-}
-
-extension UITableViewCell {
-    
-    var tableView: UITableView? { parentView(of: UITableView.self) }
-    
-    func reload() {
-        self.tableView?.beginUpdates()
-        self.tableView?.endUpdates()
-    }
-    
-}
-
-extension UICollectionViewCell {
-    
-    var collectionView: UICollectionView? { parentView(of: UICollectionView.self) }
-    
-}
-
-extension UIView {
-    
-    func parentView<T: UIView>(of type: T.Type) -> T? {
-        guard let view = superview else {
-            return nil
-        }
-        return (view as? T) ?? view.parentView(of: T.self)
-    }
-    
-}
-
-
-extension Date {
-    
-    var hour: String {
-        let formatter = DateFormatter()
-        formatter.timeZone = .current
-        formatter.locale = .current
-        formatter.timeStyle = .medium
-        return formatter.string(from: self)
     }
     
 }

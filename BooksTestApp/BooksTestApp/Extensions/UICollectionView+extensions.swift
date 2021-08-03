@@ -8,29 +8,15 @@
 import UIKit
 
 
-protocol Reusable {
-    
-    static var reusableIdentifier: String { get }
-    
-}
-
-
-extension UICollectionViewCell: Reusable {
-    
-    static var reusableIdentifier: String { String(describing: self) }
-    
-}
-
-
 extension UICollectionView {
     
     func register<T: UICollectionViewCell>(_ :T.Type) {
-        register(T.self, forCellWithReuseIdentifier: T.reusableIdentifier)
+        register(T.self, forCellWithReuseIdentifier: T.reusableId)
     }
     
     func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
-        guard let cell = dequeueReusableCell(withReuseIdentifier: T.reusableIdentifier, for: indexPath) as? T else {
-            fatalError("Could not dequeue cell with identifier: \(T.reusableIdentifier)")
+        guard let cell = dequeueReusableCell(withReuseIdentifier: T.reusableId, for: indexPath) as? T else {
+            fatalError("Could not dequeue cell with identifier: \(T.reusableId)")
         }
         
         return cell

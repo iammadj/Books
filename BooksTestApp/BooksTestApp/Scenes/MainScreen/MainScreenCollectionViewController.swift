@@ -109,7 +109,7 @@ class MainScreenCollectionViewController: UICollectionViewController, MainScreen
         let cell: MainScreenCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
         let item = items[indexPath.row]
         
-        ImageCacheManager.shared.getImage(with: item.thumbnailUrl) { image in
+        ImageCacheManager.shared.getImage(with: item.smallThumbnailUrl) { image in
             cell.configure(with: item, image: image)
         }
         return cell

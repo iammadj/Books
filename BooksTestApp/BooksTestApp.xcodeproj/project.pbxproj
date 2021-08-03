@@ -96,6 +96,12 @@
 		75A191B226B9AD58001A8810 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A191B126B9AD58001A8810 /* TestViewController.swift */; };
 		75A191B426B9D4C1001A8810 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A191B326B9D4C1001A8810 /* ImageCacheManager.swift */; };
 		75A191B526B9D4C1001A8810 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A191B326B9D4C1001A8810 /* ImageCacheManager.swift */; };
+		75A191B826B9E28C001A8810 /* BookDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A191B726B9E28C001A8810 /* BookDetailsTableViewCell.swift */; };
+		75A191B926B9E28C001A8810 /* BookDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A191B726B9E28C001A8810 /* BookDetailsTableViewCell.swift */; };
+		75A191BB26B9E4AE001A8810 /* UITableViewCell+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A191BA26B9E4AE001A8810 /* UITableViewCell+extensions.swift */; };
+		75A191BC26B9E4AE001A8810 /* UITableViewCell+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A191BA26B9E4AE001A8810 /* UITableViewCell+extensions.swift */; };
+		75A191BE26B9E4E0001A8810 /* Reusable+ReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A191BD26B9E4E0001A8810 /* Reusable+ReusableIdentifier.swift */; };
+		75A191BF26B9E4E0001A8810 /* Reusable+ReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A191BD26B9E4E0001A8810 /* Reusable+ReusableIdentifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +175,9 @@
 		757C60B326B7BCE000F8B420 /* UIImage+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extensions.swift"; sourceTree = "<group>"; };
 		75A191B126B9AD58001A8810 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		75A191B326B9D4C1001A8810 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		75A191B726B9E28C001A8810 /* BookDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		75A191BA26B9E4AE001A8810 /* UITableViewCell+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+extensions.swift"; sourceTree = "<group>"; };
+		75A191BD26B9E4E0001A8810 /* Reusable+ReusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reusable+ReusableIdentifier.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,7 +303,9 @@
 				757C602926B56D8D00F8B420 /* UIView+extensions.swift */,
 				757C60B326B7BCE000F8B420 /* UIImage+extensions.swift */,
 				757C604426B69FB100F8B420 /* UIStackView+extension.swift */,
+				75A191BD26B9E4E0001A8810 /* Reusable+ReusableIdentifier.swift */,
 				7509688826B92EDA00BABC78 /* UICollectionView+extensions.swift */,
+				75A191BA26B9E4AE001A8810 /* UITableViewCell+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -330,6 +341,7 @@
 				757C606A26B7757100F8B420 /* BookDetailsViewController.swift */,
 				757C606B26B7757100F8B420 /* BookDetailsInteractor.swift */,
 				757C606C26B7757100F8B420 /* BookDetailsEntity.swift */,
+				75A191B626B9E279001A8810 /* Cells */,
 			);
 			path = BookDetails;
 			sourceTree = "<group>";
@@ -408,6 +420,14 @@
 				757C60A726B7AC7900F8B420 /* NetworkErrorEntity.swift */,
 			);
 			path = NetworkErrorView;
+			sourceTree = "<group>";
+		};
+		75A191B626B9E279001A8810 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				75A191B726B9E28C001A8810 /* BookDetailsTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -559,6 +579,7 @@
 				757C602726B5574F00F8B420 /* BaseRouterProtocol.swift in Sources */,
 				757C609826B79BE200F8B420 /* JSONMapper.swift in Sources */,
 				757C604526B69FB100F8B420 /* UIStackView+extension.swift in Sources */,
+				75A191BB26B9E4AE001A8810 /* UITableViewCell+extensions.swift in Sources */,
 				757C607526B7757100F8B420 /* BookDetailsEntity.swift in Sources */,
 				757C602326B5572600F8B420 /* MainScreenEntity.swift in Sources */,
 				757C60AE26B7AC7900F8B420 /* NetworkErrorInteractor.swift in Sources */,
@@ -572,8 +593,10 @@
 				757C609E26B7A4F200F8B420 /* NetworkReachabilityHelper.swift in Sources */,
 				757C60B026B7AC7900F8B420 /* NetworkErrorEntity.swift in Sources */,
 				757C609126B79B3000F8B420 /* APIResponseProtocol.swift in Sources */,
+				75A191BE26B9E4E0001A8810 /* Reusable+ReusableIdentifier.swift in Sources */,
 				757C607826B7772B00F8B420 /* BookSearchService.swift in Sources */,
 				757C605A26B74DC800F8B420 /* ErrorViewInteractor.swift in Sources */,
+				75A191B826B9E28C001A8810 /* BookDetailsTableViewCell.swift in Sources */,
 				757C603E26B698E900F8B420 /* SearchControllerFactory.swift in Sources */,
 				757C607326B7757100F8B420 /* BookDetailsInteractor.swift in Sources */,
 				757C5FE226B555FB00F8B420 /* AppDelegate.swift in Sources */,
@@ -600,6 +623,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				757C609626B79BB300F8B420 /* APIManager.swift in Sources */,
+				75A191BF26B9E4E0001A8810 /* Reusable+ReusableIdentifier.swift in Sources */,
 				757C607026B7757100F8B420 /* BookDetailsRouter.swift in Sources */,
 				757C605B26B74DC800F8B420 /* ErrorViewInteractor.swift in Sources */,
 				757C605526B74DC800F8B420 /* ErrorViewPresenter.swift in Sources */,
@@ -613,6 +637,7 @@
 				757C609926B79BE200F8B420 /* JSONMapper.swift in Sources */,
 				75A191B526B9D4C1001A8810 /* ImageCacheManager.swift in Sources */,
 				757C605926B74DC800F8B420 /* ErrorViewViewController.swift in Sources */,
+				75A191B926B9E28C001A8810 /* BookDetailsTableViewCell.swift in Sources */,
 				757C604A26B6CB2000F8B420 /* ErrorView.swift in Sources */,
 				757C60A926B7AC7900F8B420 /* NetworkErrorPresenter.swift in Sources */,
 				757C602826B5574F00F8B420 /* BaseRouterProtocol.swift in Sources */,
@@ -620,6 +645,7 @@
 				757C601E26B5572600F8B420 /* MainScreenRouter.swift in Sources */,
 				757C608926B77CB700F8B420 /* Endpoint.swift in Sources */,
 				757C602026B5572600F8B420 /* MainScreenCollectionViewController.swift in Sources */,
+				75A191BC26B9E4AE001A8810 /* UITableViewCell+extensions.swift in Sources */,
 				757C609F26B7A4F200F8B420 /* NetworkReachabilityHelper.swift in Sources */,
 				757C60AF26B7AC7900F8B420 /* NetworkErrorInteractor.swift in Sources */,
 				757C5FF926B555FD00F8B420 /* BooksTestAppTests.swift in Sources */,

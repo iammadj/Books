@@ -123,7 +123,7 @@ class ErrorView: UIView {
     
     //MARK: - Configure View Public Methods
 
-    func configureWith(with model: ErrorViewModel) {
+    func configure(with model: ErrorViewModel) {
         errorLabel.text = model.title
         errorDescriptionLabel.text = model.description
     }
