@@ -16,7 +16,6 @@ protocol MainScreenPresenterProtocol: AnyObject {
     
     // View to Presenter
     func getItems(with queryString: String)
-    func presentNetworkErrorView()
     func didSelect(item: Book)
     
     // Interactor to Presenter
@@ -38,10 +37,6 @@ class MainScreenPresenter: MainScreenPresenterProtocol {
         interactor?.getItems(with: queryString)
     }
     
-    func presentNetworkErrorView() {
-        router?.presentNetworkErrorView()
-    }
-    
     func didSelect(item: Book) {
         router?.pushToBookDetailsView(with: item)
     }
@@ -54,18 +49,17 @@ class MainScreenPresenter: MainScreenPresenterProtocol {
             view?.updateViewWith(items: books)
             view?.reload()
             view?.stopAnimatingIndicatorView()
-        case .failure(let error):
+        case .failure:
+            view?.stopAnimatingIndicatorView()
             view?.updateViewWithError()
             view?.reload()
-            view?.stopAnimatingIndicatorView()
-            presentErrorView(with: .init(title: "Ooops! Something went wrong", description: error.localizedDescription))
+            let errorViewModel = ErrorViewModel(title: Constants.errorTitle, description: Constants.responseErrorDescription)
+            router?.presentErrorView(with: errorViewModel, { [weak self] in
+                print("Dismissed error view")
+                self?.view?.updateViewWith(items: [])
+                self?.view?.reload()
+            })
         }
-    }
-    
-    //MARK: - Private Methods
-    
-    private func presentErrorView(with errorViewModel: ErrorViewModel) {
-        router?.presentErrorView(with: errorViewModel)
     }
 
 }

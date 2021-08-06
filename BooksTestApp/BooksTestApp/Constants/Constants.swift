@@ -19,4 +19,7 @@ class Constants {
     
     static let baseUrl = "https://www.googleapis.com/books/v1/volumes?q="
     
+    static let errorTitle = "Oops! Something went wrong"
+    static let responseErrorDescription = "Maybe you should try type on English."
+    
 }

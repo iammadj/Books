@@ -17,8 +17,7 @@ protocol MainScreenRouterProtocol: BaseRouterProtocol {
     
     static func createModule() -> UIViewController?
     
-    func presentErrorView(with errorViewModel: ErrorViewModel)
-    func presentNetworkErrorView()
+    func presentErrorView(with errorViewModel: ErrorViewModel, _ completionHandler: @escaping EmptyCompletion)
     func pushToBookDetailsView(with item: Book)
 
 }
@@ -47,22 +46,13 @@ class MainScreenRouter: MainScreenRouterProtocol {
         return view as? MainScreenEntryPoint
     }
     
-    func presentErrorView(with errorViewModel: ErrorViewModel) {
-        guard let errorViewController = ErrorViewRouter.createModule(with: errorViewModel) else {
+    func presentErrorView(with errorViewModel: ErrorViewModel, _ completionHandler: @escaping EmptyCompletion) {
+        guard let errorViewController = ErrorViewRouter.createModule(with: errorViewModel, completionHandler) else {
             return
         }
         errorViewController.modalTransitionStyle = .crossDissolve
         errorViewController.modalPresentationStyle = .overCurrentContext
         viewController?.present(errorViewController, animated: true, completion: nil)
-    }
-    
-    func presentNetworkErrorView() {
-        guard let networkErrorView = NetworkErrorRouter.createModule() else {
-            return
-        }
-        networkErrorView.modalTransitionStyle = .crossDissolve
-        networkErrorView.modalPresentationStyle = .fullScreen
-        viewController?.present(networkErrorView, animated: true, completion: nil)
     }
     
     func pushToBookDetailsView(with item: Book) {

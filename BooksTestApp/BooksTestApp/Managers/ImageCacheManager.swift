@@ -39,6 +39,7 @@ class ImageCacheManager {
                 case .success:
                     print("Cached with url \(url)")
                     if index == endIndex {
+                        print("\nFinished Caching Images")
                         completionHandler(false)
                     }
                 case .failure:
@@ -53,6 +54,10 @@ class ImageCacheManager {
     
     func getImage(with url: URL?, _ completionHandler: @escaping ((UIImage) -> ())) {
         guard let url = url else { return }
+        guard isCached(url) else {
+            print("\(url) is not in cache")
+            return
+        }
         KingfisherManager.shared.retrieveImage(with: url, options: [.onlyFromCache]) { result in
             switch result {
             case .success(let value):
@@ -62,6 +67,10 @@ class ImageCacheManager {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    private func isCached(_ url: URL) -> Bool {
+        ImageCache.default.isCached(forKey: url.absoluteString)
     }
     
 }

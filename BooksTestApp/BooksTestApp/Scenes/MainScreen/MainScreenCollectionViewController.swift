@@ -26,17 +26,17 @@ class MainScreenCollectionViewController: UICollectionViewController, MainScreen
 
 	var presenter: MainScreenPresenterProtocol?
     
-    private let indicatorView: AppIndicatorView = {
-        let indicatorView = AppIndicatorView()
-        indicatorView.translatesAutoresizingMaskIntoConstraints = false
-        indicatorView.stopAnimating()
-        return indicatorView
+    private let activityView: AppActivityView = {
+        let activityView = AppActivityView()
+        activityView.translatesAutoresizingMaskIntoConstraints = false
+        activityView.stopAnimating()
+        return activityView
     }()
     
     private let layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
-        let screenSize = UIScreen.main.bounds
-        layout.estimatedItemSize = .init(width: screenSize.width - 32, height: screenSize.height)
+        let size = UIScreen.main.bounds
+        layout.estimatedItemSize = .init(width: size.width, height: size.height / 2)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         return layout
@@ -46,14 +46,10 @@ class MainScreenCollectionViewController: UICollectionViewController, MainScreen
         SearchControllerFactory.create(with: self, placeholder: "search")
     }()
     
-    private var isNetworkReachable: Bool {
-        NetworkReachabilityHelper.isConnectedToInternet
-    }
-    
     private var items: [Book] = []
     
     init() {
-        super.init(collectionViewLayout: layout)
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     
     required init?(coder: NSCoder) {
@@ -63,31 +59,33 @@ class MainScreenCollectionViewController: UICollectionViewController, MainScreen
 	override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setSearchController()
         setupCollectionView()
-        setupViewLC()
+        setupActivityViewLC()
     }
     
     //MARK: - Private Methods
     
     private func setupView() {
         view.backgroundColor = .white
+    }
+    
+    private func setSearchController() {
         navigationItem.titleView = searchController.searchBar
-        navigationItem.hidesSearchBarWhenScrolling = true
     }
     
     private func setupCollectionView() {
         collectionView.setCollectionViewLayout(layout, animated: true)
-        collectionView.contentInset = .init(top: 16, left: 0, bottom: 16, right: 0)
+        collectionView.contentInset = .init(top: 0, left: 0, bottom: 32, right: 0)
         collectionView.backgroundColor = view.backgroundColor
         collectionView.register(MainScreenCollectionViewCell.self)
     }
     
-    private func setupViewLC() {
-        view.addSubview(indicatorView)
-        
+    private func setupActivityViewLC() {
+        view.addSubview(activityView)
         NSLayoutConstraint.activate([
-            indicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            indicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            activityView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
@@ -128,20 +126,25 @@ extension MainScreenCollectionViewController {
     
     func updateViewWith(items: [Book]) {
         self.items = items
+        setSearchController()
+        searchController.becomeFirstResponder()
         setCollectionView(isHidden: false)
     }
     
     func updateViewWithError() {
         items = []
         setCollectionView(isHidden: true)
+        searchController.searchBar.text = nil
+        searchController.resignFirstResponder()
+        searchController.dismiss(animated: true, completion: nil)
     }
     
     func startAnimatingIndicatorView() {
-        indicatorView.startAnimating()
+        activityView.startAnimating()
     }
     
     func stopAnimatingIndicatorView() {
-        indicatorView.stopAnimating()
+        activityView.stopAnimating()
     }
     
     func reload() {

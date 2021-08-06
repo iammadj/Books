@@ -32,9 +32,13 @@ class ErrorViewViewController: UIViewController, ErrorViewViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
-        view.backgroundColor = .black.withAlphaComponent(0.7)
+        setupView()
         setupLC()
         errorViewCloseButtonDidClick()
+    }
+    
+    private func setupView() {
+        view.backgroundColor = .black.withAlphaComponent(0.7)
     }
 
     private func setupLC() {

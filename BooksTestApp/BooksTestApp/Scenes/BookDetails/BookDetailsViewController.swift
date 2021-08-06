@@ -21,22 +21,23 @@ protocol BookDetailsViewProtocol: AnyObject {
 class BookDetailsViewController: UITableViewController, BookDetailsViewProtocol {
 
 	var presenter: BookDetailsPresenterProtocol?
+
+    private let bottomInset: CGFloat = 32
     
     private var items: [Book] = []
-
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         setupTableView()
         presenter?.viewDidLoad()
     }
     
     private func setupTableView() {
-        tableView.isHidden = true
-        tableView.register(BookDetailsTableViewCell.self)
-        tableView.tableFooterView = UIView()
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        view.backgroundColor = .white
         tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView()
+        tableView.contentInset = .init(top: 0, left: 0, bottom: bottomInset, right: 0)
+        tableView.register(BookDetailsTableViewCell.self)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,14 +54,6 @@ class BookDetailsViewController: UITableViewController, BookDetailsViewProtocol 
         
         return cell
     }
-    
-    private func setTableView(isHidden: Bool) {
-        DispatchQueue.main.async {
-            UIView.animate(withDuration: 0.6) { [weak self] in
-                self?.tableView.isHidden = isHidden
-            }
-        }
-    }
 
 }
 
@@ -70,7 +63,6 @@ extension BookDetailsViewController {
     
     func updateView(with item: Book) {
         items.append(item)
-        setTableView(isHidden: false)
         reload()
     }
     

@@ -1,5 +1,5 @@
 //
-//  AppIndicatorView.swift
+//  AppActivityView.swift
 //  BooksTestApp
 //
 //  Created by Majit Uteniyazov on 02/08/21.
@@ -8,7 +8,7 @@
 import UIKit
 
 
-class AppIndicatorView: UIView {
+class AppActivityView: UIView {
     
     private let containerView: UIView = {
         let containerView = UIView()
