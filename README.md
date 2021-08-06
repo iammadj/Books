@@ -13,7 +13,8 @@ App has things like:
 - Factory desing pattern;
 - Best practice extensions;
 - Helper;
-- Error Catching and showing it.
+- Error Catching and showing it;
+- Multitargeting approach (production and development).
 
 Used minimum third-party libraries with Swift Package Dependencies
 (Alamofire, Kingfisher, SwiftyJSON)
