@@ -12,7 +12,7 @@
 		757C5FE426B555FB00F8B420 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5FE326B555FB00F8B420 /* SceneDelegate.swift */; };
 		757C5FEB26B555FD00F8B420 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757C5FEA26B555FD00F8B420 /* Assets.xcassets */; };
 		757C5FEE26B555FD00F8B420 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757C5FEC26B555FD00F8B420 /* LaunchScreen.storyboard */; };
-		757C5FF926B555FD00F8B420 /* BooksTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5FF826B555FD00F8B420 /* BooksTestAppTests.swift */; };
+		757C5FF926B555FD00F8B420 /* BooksServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C5FF826B555FD00F8B420 /* BooksServiceTests.swift */; };
 		757C600426B555FD00F8B420 /* BooksTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C600326B555FD00F8B420 /* BooksTestAppUITests.swift */; };
 		757C601B26B5572600F8B420 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C601626B5572600F8B420 /* MainScreenPresenter.swift */; };
 		757C601C26B5572600F8B420 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C601626B5572600F8B420 /* MainScreenPresenter.swift */; };
@@ -91,6 +91,7 @@
 		75A191BF26B9E4E0001A8810 /* Reusable+ReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A191BD26B9E4E0001A8810 /* Reusable+ReusableIdentifier.swift */; };
 		75A191C126BAEC37001A8810 /* MainContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A191C026BAEC36001A8810 /* MainContainerView.swift */; };
 		75A191C226BAEC37001A8810 /* MainContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A191C026BAEC36001A8810 /* MainContainerView.swift */; };
+		75A191C326BD69D3001A8810 /* UICollectionView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7509688826B92EDA00BABC78 /* UICollectionView+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,7 +120,7 @@
 		757C5FED26B555FD00F8B420 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		757C5FEF26B555FD00F8B420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		757C5FF426B555FD00F8B420 /* BooksTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BooksTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		757C5FF826B555FD00F8B420 /* BooksTestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTestAppTests.swift; sourceTree = "<group>"; };
+		757C5FF826B555FD00F8B420 /* BooksServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksServiceTests.swift; sourceTree = "<group>"; };
 		757C5FFA26B555FD00F8B420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		757C5FFF26B555FD00F8B420 /* BooksTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BooksTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		757C600326B555FD00F8B420 /* BooksTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTestAppUITests.swift; sourceTree = "<group>"; };
@@ -236,7 +237,7 @@
 		757C5FF726B555FD00F8B420 /* BooksTestAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				757C5FF826B555FD00F8B420 /* BooksTestAppTests.swift */,
+				757C5FF826B555FD00F8B420 /* BooksServiceTests.swift */,
 				757C5FFA26B555FD00F8B420 /* Info.plist */,
 			);
 			path = BooksTestAppTests;
@@ -608,13 +609,14 @@
 				757C608926B77CB700F8B420 /* Endpoint.swift in Sources */,
 				757C602026B5572600F8B420 /* MainScreenCollectionViewController.swift in Sources */,
 				75A191BC26B9E4AE001A8810 /* UITableViewCell+extensions.swift in Sources */,
-				757C5FF926B555FD00F8B420 /* BooksTestAppTests.swift in Sources */,
+				757C5FF926B555FD00F8B420 /* BooksServiceTests.swift in Sources */,
 				757C603F26B698E900F8B420 /* SearchControllerFactory.swift in Sources */,
 				757C606E26B7757100F8B420 /* BookDetailsPresenter.swift in Sources */,
 				757C605726B74DC800F8B420 /* ErrorViewRouter.swift in Sources */,
 				757C607426B7757100F8B420 /* BookDetailsInteractor.swift in Sources */,
 				757C601C26B5572600F8B420 /* MainScreenPresenter.swift in Sources */,
 				757C604626B69FB100F8B420 /* UIStackView+extension.swift in Sources */,
+				75A191C326BD69D3001A8810 /* UICollectionView+extensions.swift in Sources */,
 				757C60B526B7BCE000F8B420 /* UIImage+extensions.swift in Sources */,
 				757C604D26B7353D00F8B420 /* FetchError.swift in Sources */,
 				757C608626B77C7F00F8B420 /* BooksEndpoint.swift in Sources */,

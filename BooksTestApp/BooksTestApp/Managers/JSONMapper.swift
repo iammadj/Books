@@ -72,7 +72,7 @@ class JSONMapper: JSONMapperProtocol {
         } catch {
             print("Unknown error")
         }
-        throw FetchError.failed
+        throw FetchError.failedMapToObject
     }
     
 }

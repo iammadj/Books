@@ -9,14 +9,14 @@ import Foundation
 
 
 enum FetchError: Error {
-    case failed
+    case failedMapToObject
     case emptyData
     case parseError
     
     var description: String {
         switch self {
-        case .failed:
-            return "Sorry! Could not fetch data."
+        case .failedMapToObject:
+            return "Sorry! Could not fetch data, because of something is wrong with mapping to Object."
         case .emptyData:
             return "There is no any data."
         case .parseError:
