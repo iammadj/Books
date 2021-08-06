@@ -13,7 +13,6 @@ import Kingfisher
 protocol BookSearchServiceProtocol {
     
     func getBooks(with queryString: String, result: @escaping (BookSearchResult) -> ())
-    func getPhotos(_ result: @escaping ((Result<[Test], Error>) -> Void))
     
 }
 
@@ -47,29 +46,4 @@ class BookSearchService: BookSearchServiceProtocol {
         }
     }
     
-    func getPhotos(_ result: @escaping ((Result<[Test], Error>) -> Void)) {
-        apiManager.request(with: PhotosEndpoint.getAll) { res in
-            result(self.jsonMapper.mapToResult(from: res, for: nil, type: [Test].self))
-        }
-    }
-    
-}
-
-
-enum PhotosEndpoint: Endpoint {
-    case getAll
-    
-    var url: String {
-        switch self {
-        case .getAll:
-            return "https://jsonplaceholder.typicode.com/photos"
-        }
-    }
-    
-    var method: HTTPMethod {
-        switch self {
-        case .getAll:
-            return .get
-        }
-    }
 }
